@@ -13,7 +13,7 @@ namespace calculadora
 
         public ControlCalculadora()
         {
-           this.calculadora = new ModelCalculadora();
+            this.calculadora = new ModelCalculadora();
         }//fim do construtor
 
         public void Coletar()
@@ -25,23 +25,40 @@ namespace calculadora
             this.calculadora.GetSetNum2 = Convert.ToDouble(Console.ReadLine());
         }//fim do coletar
 
+
+
+
+
         public int Menu()
         {
-            Console.WriteLine("------ Menu -------"                    +
-                              "\n0. Sair"                              +
-                              "\n1. Somar"                             +
-                              "\n2. Subtrair"                          +
-                              "\n3. Dividir"                           +
-                              "\n4. Multiplicar"                       +
-                              "\n5. Potência"                          +
-                              "\n6. Raiz"                              +
-                              "\n7. Tabuada"                           +
+            Console.WriteLine("------ Menu -------" +
+                              "\n0. Sair" +
+                              "\n1. Somar" +
+                              "\n2. Subtrair" +
+                              "\n3. Dividir" +
+                              "\n4. Multiplicar" +
+                              "\n5. Potência" +
+                              "\n6. Raiz" +
+                              "\n7. Tabuada" +
                               "\n8. Conversão de binário para decimal" +
                               "\n9. Conversão de decimal para binário" +
-                              "\n10. Hexadecimal para decimal "        +
-                              "\n11. Decimal para Hexadecimal"         +
-                              "\n12. Bhaskara"                         +
-                              "\n\nEscolha uma das opções acima: "  );
+                              "\n10. Hexadecimal para decimal " +
+                              "\n11. Decimal para Hexadecimal" +
+                              "\n12. Bhaskara" +
+                              "\n14.Exercicio 1" +
+                              "\n15. Exercicio 2" +
+                              "\n16. Exercicio 3 " +
+                              "\n17. Exercicio 4" +
+                              "\n18. Exercicio 5" +
+                              "\n19. Exercicio 6" +
+                              "\n20. Exercicio 7" +
+                              "\n21. Exercicio 8" +
+                              "\n22. Exercicio 9" +
+                              "\n23. Exercicio 10" +
+                              "\n24. Exercicio 11" +
+                              "\n25. Exercicio 12" +
+
+                              "\n\nEscolha uma das opções acima: ");
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
         }//fim do método Menu
@@ -50,7 +67,7 @@ namespace calculadora
         {
             int opcao = 0;
             do
-            { 
+            {
                 opcao = Menu();
                 Console.Clear();//Limpa a tela
                 switch (opcao)
@@ -119,12 +136,96 @@ namespace calculadora
                         double c = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine(this.calculadora.bhaskara(a, b, c));
                         break;
+
+                    case 14:
+                        Console.WriteLine("Informe um valor para retornarmos ele dobrado");
+                        this.calculadora.GetSetNum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("duplicar: " + this.calculadora.ExerUMParteUm());
+
+
+                        Console.WriteLine("Informe um valor para retornarmos ele triplicado");
+                        this.calculadora.GetSetNum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("triplicar: " + this.calculadora.ExerUmParteDois());
+                        break;
+
+                    case 15:
+                        Console.WriteLine("Informe o valor do seu salario");
+                        double salario = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.ExerDois(salario));
+                        break;
+
+
+                    case 16:
+                        Console.WriteLine("Informe um valor");
+                        this.calculadora.GetSetNum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.ExerTresParteDois());
+                        Console.WriteLine(this.calculadora.ExerTresParteUm());
+                        break;
+
+                    case 17:
+                        Console.WriteLine("somando: " + this.calculadora.ExerQuatro());
+                        break;
+
+                    case 18:
+                        Console.WriteLine("digite o valor de N : ");
+                        this.calculadora.GetSetNum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.ExerCinco());
+
+                        break;
+
+
+                    case 19:
+                        Console.WriteLine("Informe um primeiro valor");
+                        int inicio = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o segundo valor");
+                        int final = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.ExerSeis(inicio, final));
+                        break;
+
+                    case 20:
+                        Console.WriteLine("Aqui estão os números impares entre 100 e 200");
+                        Console.WriteLine(this.calculadora.ExerSete());
+                        break;
+
+                    case 21:
+
+                        Console.WriteLine("Soma dos números");
+                        Console.WriteLine("resultado: " + this.calculadora.ExerOito());
+
+                        break;
+
+                    case 22:
+                        Console.WriteLine("Soma dos números");
+                        Console.WriteLine("resultado: " + this.calculadora.ExerNove());
+                        break;
+
+                    case 23:
+
+                        Console.WriteLine("A média dos valores pares é de:" + this.calculadora.ExerDez());
+                        break;
+
+                    case 24:
+
+                        Console.WriteLine("O maior número é " + this.calculadora.ExerOnze());
+                        Console.WriteLine("O menor número é " + this.calculadora.ExerOnzeParteDois());
+
+
+
+                        break;
+
+                    case 25:
+                        Console.WriteLine("Soma dos número positivos e quantidade de negativos");
+                        Console.WriteLine(this.calculadora.ExerDoze());
+
+                        break;
+
+
                     default:
                         Console.WriteLine("Opção escolhida não é valida");
                         break;
                 }//fim do switch
-                
-            } while(opcao != 0);//fim do Do...while
+
+            } while (opcao != 0);//fim do Do...while
         }//fim do operacao
     }//fim da classe
 }//fim do projeto
