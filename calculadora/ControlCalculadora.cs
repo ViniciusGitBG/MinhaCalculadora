@@ -57,6 +57,8 @@ namespace calculadora
                               "\n23. Exercicio 10" +
                               "\n24. Exercicio 11" +
                               "\n25. Exercicio 12" +
+                              "\n26. Exercicio 13" +
+                              "\n27. Exercicio 14" +
 
                               "\n\nEscolha uma das opções acima: ");
             int opcao = Convert.ToInt32(Console.ReadLine());
@@ -218,6 +220,23 @@ namespace calculadora
                         Console.WriteLine(this.calculadora.ExerDoze());
 
                         break;
+
+                    case 26:
+                        Console.WriteLine("Informe um número para começar: ");
+                        int numero = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.ExerTreze(numero));
+
+                        break;
+
+                    case 27:
+                        Console.WriteLine("Quantos jogadores há no time ?");
+                        double jogadores = Convert.ToDouble(Console.ReadLine());
+                        
+                        Console.WriteLine(this.calculadora.ExerQuator(jogadores));
+
+
+                        break;
+
 
 
                     default:

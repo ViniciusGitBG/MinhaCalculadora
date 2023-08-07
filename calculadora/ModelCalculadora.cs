@@ -474,8 +474,42 @@ namespace calculadora
             Console.WriteLine("A quantidade de valores negativos é: " + quantidadeNegativos);
             return 0;
 
+        }
+
+        public double ExerTreze(int numero)
+        {
+            int resultado = 1;
+            
+                for (int i = 1; i <= numero; i++)
+                {
+                    resultado *= i;
+                    Console.WriteLine(numero + "*"+ i + "=" + resultado);
+                    
+                }
+            
+            return resultado;
+        }
+
+        public double ExerQuator(double jogadores)
+        {
+            double acumula = 0;
+            double altura = 0;
 
 
+            for (int i = 1; i <= jogadores; i++)
+            {
+               
+                Console.WriteLine("informe a altura do " + i + "°" + "jogador");
+                altura = Convert.ToDouble(Console.ReadLine());
+                
+                acumula += altura;
+                
+
+
+            }
+            Console.WriteLine("A média da altura dos jogadores é de " + acumula / jogadores);
+            return 0;
+            
         }
 
 
