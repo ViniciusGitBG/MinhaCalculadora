@@ -395,61 +395,45 @@ namespace calculadora
             return media;
         }
 
-        public int ExerOnze()
+        public string ExerOnze()
         {
-            int maior = 0;
-            int valor = 1;
+            int maior = 1;
+            int numero = 1;
+            int menor = 1;
+            Boolean flag = false;
 
-
-            while (valor != 0)
+            do
             {
-                Console.WriteLine("Digite um valor (ou 0 para sair):");
-                valor = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Digite um valor ou 0 para sair:");
+                numero = Convert.ToInt32(Console.ReadLine());
 
-                if (valor != 0)
+
+                if(flag == false)
                 {
-                    if (valor > maior)
-                    {
-                        maior = valor;
-
-                    }
-
+                    maior = numero;
+                    menor = numero;
+                    flag = true;
                 }
-            }
-            return maior;
+
+                if (numero > maior && numero !=0)
+                {
+                    maior = numero;
+                }
+                else if (numero < menor && numero !=0)
+                {
+                    menor = numero;
+                }
+
+
+
+            } while (numero != 0);
+                return ("O maior número é " + maior + " O menor número é " + menor);
 
 
         }
 
-        public int ExerOnzeParteDois()
-        {
-
-            int menor = 0;
-            int valor = 1;
-
-
-            while (valor != 0)
-            {
-                Console.WriteLine("Digite um valor 0 para sair:");
-                valor = Convert.ToInt32(Console.ReadLine());
-
-                if (valor != 0)
-                {
-
-                    if (valor < menor)
-                    {
-                        menor = valor;
-
-                    }
-                    return menor;
-
-                }
-            }
-            return menor;
-
-        }
-
-        public double ExerDoze()
+        
+        public void ExerDoze()
         {
 
             int somaPositivos = 0;
@@ -472,7 +456,6 @@ namespace calculadora
 
             Console.WriteLine("A soma dos valores positivos é: " + somaPositivos);
             Console.WriteLine("A quantidade de valores negativos é: " + quantidadeNegativos);
-            return 0;
 
         }
 
@@ -490,7 +473,7 @@ namespace calculadora
             return resultado;
         }
 
-        public double ExerQuator(double jogadores)
+        public void ExerQuator(double jogadores)
         {
             double acumula = 0;
             double altura = 0;
@@ -508,9 +491,223 @@ namespace calculadora
 
             }
             Console.WriteLine("A média da altura dos jogadores é de " + acumula / jogadores);
-            return 0;
             
-        }
+            
+        }//fim do exercicio 14
+
+        public void ExerQuinze()
+        {
+            
+            string vencedora = "";
+            
+            string[] candidatas = new string[17];
+            int[] notas = new int[17];
+            double maiorNota = notas[0];
+            for (int i = 1;  i < candidatas.Length; i++)
+            {
+                    Console.WriteLine("Informe o nome da " + i + " candidata:");
+
+                    candidatas[i] = (Console.ReadLine());
+             
+                    
+                do {
+                    Console.WriteLine("Informe a nota da " + i + " candidata:");
+                    notas[i] = Convert.ToInt32(Console.ReadLine());
+                    if (notas[i] >= 11)
+                    {
+                        Console.WriteLine("Informe uma nota entre 0 e 10");
+                        Console.WriteLine("Informe a nota da " + i + " candidata:");
+                        notas[i] = Convert.ToInt32(Console.ReadLine());
+                        
+                    }
+                    else if (notas[i] <= -1)
+                    {
+                        Console.WriteLine("Informe uma nota entre 0 e 10");
+                        Console.WriteLine("Informe a nota da " + i + " candidata:");
+                        notas[i] = Convert.ToInt32(Console.ReadLine());
+                        
+                    }
+                    
+
+                    if (notas[i] > maiorNota)
+                    {
+                        maiorNota = notas[i];
+                        vencedora = candidatas[i];
+                    }
+
+
+
+                } while (notas[i] < 0 && notas[i] > 10);
+                
+
+                    
+               
+            }// vetor candidatas
+
+            Console.WriteLine("A candidata " + vencedora + " foi a vencedora com nota : " + maiorNota);
+
+
+        }//fim da atividade 15
+
+        public void ExerDezesseis(double eleitores,double nulos,double validos, double brancos)
+        {
+            double vtBranco = 0;
+            double vtNulos = 0;
+            double vtValidos = 0;
+            if (eleitores <= 0)
+            {
+                Console.WriteLine("Informe um número válido de eleitores");
+            }
+
+            if (nulos <= 0)
+            {
+                Console.WriteLine("Informe um número válido de votos");
+            }
+
+            if (validos <= 0)
+            {
+                Console.WriteLine("Informe um número válido de votos");
+            }
+
+            if (brancos <= 0)
+            {
+                Console.WriteLine("Informe um número válido de votos");
+            }
+
+            
+
+                vtBranco = (brancos / eleitores) * 100;
+                vtNulos = (nulos / eleitores) * 100;
+                vtValidos = (validos / eleitores) * 100;
+            
+            
+            Console.WriteLine($"O porcentual de votos brancos é de {vtBranco} " +
+                $"\n O porcentual de votos nulos é de {vtNulos} \n O porcentual de votos validos é de " +
+                $"{vtValidos} ");
+        }// fim da atividade 16
+
+        public void ExerDezessete(double custoFabrica)
+        {
+           
+            double valorImporsto = (custoFabrica * 45) / 100;
+            double valorDistribuidor = (custoFabrica * 28) / 100;
+            double valorTot = custoFabrica + valorDistribuidor + valorImporsto;
+
+            Console.WriteLine("O valor do imposto é " + valorImporsto + "\n " +
+                "O valor da porcentagem do distribuidor é de " + valorDistribuidor +
+                "\n O valor total do veiculo então é de " + valorTot);
+        }// fim da atividade 17
+
+        public void ExerDezoito()
+        {
+            int anos = 0;
+            int dias = 0;
+            int meses = 0;
+            do
+            {
+                Console.WriteLine("Informe sua idade");
+                anos = Convert.ToInt32(Console.ReadLine());
+                if (anos < 0)
+                {
+                    Console.WriteLine("informe uma idade válida");
+                }
+            }while(anos <= 0);
+
+            do
+            {
+                Console.WriteLine("Informe quantos meses você tem");
+                meses = Convert.ToInt32(Console.ReadLine());
+                if (meses < 0 || meses > 12)
+                {
+                    Console.WriteLine("informe um número válido de meses");
+                }
+            } while (meses <= 0);
+
+            do
+            {
+                Console.WriteLine("Informe quantos dias você tem");
+                dias = Convert.ToInt32(Console.ReadLine());
+                if (dias < 0 || dias > 31)
+                {
+                    Console.WriteLine("informe um valor de dias válido");
+                }
+            } while (dias <= 0);
+
+            double convertAnosDias = anos * 365;
+            double convertDiasMeses = meses * 30;
+            double tot = convertAnosDias + convertDiasMeses;
+
+            Console.WriteLine("Sua idade em dias é de " + tot);
+
+        }// fim da atividade 18
+
+        public void ExerDezenove()
+        {
+            int[] elementos = new int[5];
+            
+            int maiorElemento = 0;
+            for(int i = 0; i < elementos.Length; i++)
+            {
+                Console.WriteLine("Informe os números: ");
+                elementos[i] = Convert.ToInt32(Console.ReadLine());
+
+                
+                
+                    if (elementos[i] > maiorElemento)
+                    maiorElemento = elementos[i];
+                    
+                
+            }
+
+            Console.WriteLine("O maior elemento do vetor de 5 posições é de: " + maiorElemento);
+        }//fim da atividade 19
+
+        public void ExerVinte()
+        {
+            int[] par = new int[5];
+            int[] impar = new int[5];
+            int[] aux1 = new int[5];
+            int[] aux2 = new int[5];
+           
+
+            for (int i =0; i < par.Length; i++)
+            {
+                Console.WriteLine("Informe os números");
+                par[i] = Convert.ToInt32(Console.ReadLine());
+                if (par[i] % 2 == 0)
+                {
+                    aux1[i] = par[i];
+                }
+                
+                
+            }
+
+            for (int j = 0; j < impar.Length; j++)
+            {
+                Console.WriteLine("Informe os números");
+                impar[j] = Convert.ToInt32(Console.ReadLine());
+                if (impar[j] % 2 != 0)
+                {
+                    aux2[j] = impar[j];
+                }
+                    
+                
+            }
+            Console.WriteLine("vetor par");
+            for (int i = 0; i < par.Length; i++)
+            {
+                Console.WriteLine(aux1[i]);
+            }
+            Console.WriteLine("vetor impar");
+
+            for (int j = 0; j < impar.Length; j++)
+            {
+                Console.WriteLine(aux2[j]);
+            }
+
+
+
+        }// fim do exercicio 20
 
 
 

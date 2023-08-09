@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,13 @@ namespace calculadora
                               "\n25. Exercicio 12" +
                               "\n26. Exercicio 13" +
                               "\n27. Exercicio 14" +
+                              "\n28. Exercicio 15" +
+                              "\n29. Exercicio 16" +
+                              "\n30. Exercicio 17" +
+                              "\n31. Exercicio 18" +
+                              "\n32. Exercicio 19" +
+                              "\n33. Exercicio 20" +
+
 
                               "\n\nEscolha uma das opções acima: ");
             int opcao = Convert.ToInt32(Console.ReadLine());
@@ -208,16 +216,13 @@ namespace calculadora
 
                     case 24:
 
-                        Console.WriteLine("O maior número é " + this.calculadora.ExerOnze());
-                        Console.WriteLine("O menor número é " + this.calculadora.ExerOnzeParteDois());
-
-
-
+                        Console.WriteLine(this.calculadora.ExerOnze());
+                        
                         break;
 
                     case 25:
                         Console.WriteLine("Soma dos número positivos e quantidade de negativos");
-                        Console.WriteLine(this.calculadora.ExerDoze());
+                        this.calculadora.ExerDoze();
 
                         break;
 
@@ -232,12 +237,51 @@ namespace calculadora
                         Console.WriteLine("Quantos jogadores há no time ?");
                         double jogadores = Convert.ToDouble(Console.ReadLine());
                         
-                        Console.WriteLine(this.calculadora.ExerQuator(jogadores));
+                        this.calculadora.ExerQuator(jogadores);
 
 
                         break;
 
+                    case 28:
 
+                        this.calculadora.ExerQuinze();
+                        break;
+
+                    case 29:
+                        Console.WriteLine("Informe a quantidade de eleitores");
+                        double eleitores = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Informe a quantidade de votos nulos");
+                        double nulos = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Informe a quantidade de votos validos");
+                        double validos = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Informe a quantidade de votos brancos");
+                        double brancos = Convert.ToInt32(Console.ReadLine());
+
+                        this.calculadora.ExerDezesseis(eleitores,nulos,validos,brancos);
+
+                        break;
+
+                    case 30:
+                        Console.WriteLine("Qual é o valor do custo da fábrica");
+                        double custoFabrica = Convert.ToDouble(Console.ReadLine());
+                        this.calculadora.ExerDezessete(custoFabrica);
+                        break;
+
+                    case 31:
+
+                        this.calculadora.ExerDezoito();
+                        break;
+
+                    case 32:
+                        this.calculadora.ExerDezenove();
+                        break;
+
+                    case 33:
+                        this.calculadora.ExerVinte();
+                        break;
 
                     default:
                         Console.WriteLine("Opção escolhida não é valida");
